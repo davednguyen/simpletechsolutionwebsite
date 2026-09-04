@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE TECH SOLUTION LLC | Custom App Development & IT Consulting</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem;
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--gray);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 6rem 2rem 5rem;
+            background: radial-gradient(circle at top right, #f1f5f9, #ffffff);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            color: var(--dark);
+            line-height: 1.15;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2.25rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.05rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.25rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #eff6ff;
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .contact-box {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto;
+            border: 1px solid var(--border);
+        }
+
+        .contact-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .contact-box p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-section {
+            background-color: var(--light);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .privacy-content h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.25rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero { padding: 4rem 1.5rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">SIMPLE TECH <span>SOLUTION</span> LLC</div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">App Development & IT Consulting</div>
+            <h1>Building Mobile Applications & Enterprise Cloud Architecture</h1>
+            <p>SIMPLE TECH SOLUTION LLC delivers custom app development, API integrations, and technical consulting to help businesses modernize, scale, and thrive.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <main class="container" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Tailored technology solutions designed for modern enterprise performance.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Mobile & Web App Development</h3>
+                <p>End-to-end design, development, and deployment of native and cross-platform mobile applications for iOS and Android, built for security, scale, and performance.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <h3>IT & Cloud Consulting</h3>
+                <p>Strategic IT consulting to optimize your technology stack, improve system performance, and establish reliable cloud infrastructure tailored to business objectives.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Backend & API Integration</h3>
+                <p>Designing enterprise API architectures, robust backend databases, and microservices that streamline data flows and connect disparate enterprise platforms seamlessly.</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="container" id="contact" style="padding-top: 0;">
+        <div class="contact-box">
+            <h3>Let's Discuss Your Project</h3>
+            <p>Ready to build your app or modernize your IT infrastructure? Reach out to schedule a consultation.</p>
+            <p><strong>SIMPLE TECH SOLUTION LLC</strong><br>Kent, WA</p>
+            <a href="mailto:simpletechsolution.llc@gmail.com" class="btn">Email Us Directly</a>
+        </div>
+    </section>
+
+    <section class="privacy-section" id="privacy">
+        <div class="privacy-content">
+            <h2>Privacy Policy</h2>
+            <p><em>Last updated: September 2026</em></p>
+            <p>SIMPLE TECH SOLUTION LLC ("we," "our," or "us") respects your privacy and is committed to protecting it through our compliance with this policy.</p>
+
+            <h3>1. Information Collection</h3>
+            <p>Our applications and website may collect minimal diagnostic data or user-provided communications strictly necessary to deliver core functionality and support services.</p>
+
+            <h3>2. Use of Information</h3>
+            <p>We use collected information solely to maintain, support, and improve our services and applications. We do not sell personal data to third parties.</p>
+
+            <h3>3. Third-Party Services</h3>
+            <p>Our apps may integrate standard analytics or backend services provided by Google Play Services or Apple Developer tools, governed by their respective privacy policies.</p>
+
+            <h3>4. Contact</h3>
+            <p>For privacy inquiries, please contact us at simpletechsolution.llc@gmail.com.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 SIMPLE TECH SOLUTION LLC. All rights reserved.
+    </footer>
+
+</body>
+</html>
