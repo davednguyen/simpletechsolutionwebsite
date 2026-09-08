@@ -1,332 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMPLE TECH SOLUTION LLC | Custom App Development & IT Consulting</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --border: #e2e8f0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIMPLE TECH SOLUTION LLC | Application Development & IT Consulting</title>
+  <meta name="description" content="Official website of SIMPLE TECH SOLUTION LLC. Custom software development, mobile applications, and enterprise IT integration solutions." />
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            color: var(--dark);
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-        header {
-            border-bottom: 1px solid var(--border);
-            padding: 1.25rem 2rem;
-            background-color: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    /* Header Banner Container */
+    .banner-container {
+      width: 100%;
+      max-height: 350px;
+      overflow: hidden;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
 
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .banner-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--dark);
-            letter-spacing: -0.5px;
-        }
+    /* Main Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
 
-        .logo span {
-            color: var(--primary);
-        }
+    /* Profile / Branding Header */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: -3rem; /* Overlap slightly with banner */
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
 
-        nav a {
-            color: var(--gray);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+    .developer-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 20px;
+      border: 4px solid var(--bg-color);
+      background-color: var(--card-bg);
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
 
-        nav a:hover {
-            color: var(--primary);
-        }
+    .profile-title h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
 
-        .hero {
-            padding: 6rem 2rem 5rem;
-            background: radial-gradient(circle at top right, #f1f5f9, #ffffff);
-            text-align: center;
-        }
+    .profile-title p {
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 500;
+    }
 
-        .hero-content {
-            max-width: 850px;
-            margin: 0 auto;
-        }
+    /* Cards / Sections */
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
 
-        .badge {
-            display: inline-block;
-            background-color: #e0e7ff;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.35rem 0.85rem;
-            border-radius: 50px;
-            margin-bottom: 1.25rem;
-        }
+    .card h2 {
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.25rem;
-            color: var(--dark);
-            line-height: 1.15;
-            font-weight: 800;
-        }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--gray);
-            margin-bottom: 2.25rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .service-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.85rem 1.75rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background-color 0.2s;
-        }
+    .service-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
 
-        .btn:hover {
-            background-color: var(--primary-hover);
-        }
+    .service-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
+    .contact-info strong {
+      color: var(--text-main);
+    }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 1.05rem;
-            margin-bottom: 3.5rem;
-        }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2.25rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            background-color: #eff6ff;
-            color: var(--primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.25rem;
-        }
-
-        .card h3 {
-            margin-bottom: 0.75rem;
-            color: var(--dark);
-            font-size: 1.25rem;
-        }
-
-        .card p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .contact-box {
-            background-color: var(--light);
-            border-radius: 12px;
-            padding: 3.5rem 2rem;
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto;
-            border: 1px solid var(--border);
-        }
-
-        .contact-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--dark);
-        }
-
-        .contact-box p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .privacy-section {
-            background-color: var(--light);
-            border-top: 1px solid var(--border);
-            padding: 4rem 2rem;
-        }
-
-        .privacy-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .privacy-content h2 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .privacy-content h3 {
-            color: var(--dark);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            text-align: center;
-            padding: 2rem;
-            color: var(--gray);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.25rem; }
-            .hero p { font-size: 1.1rem; }
-            .hero { padding: 4rem 1.5rem 3rem; }
-        }
-    </style>
+    @media (max-width: 600px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -2rem;
+        gap: 1rem;
+      }
+      .developer-icon {
+        width: 80px;
+        height: 80px;
+      }
+      .profile-title h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">SIMPLE TECH <span>SOLUTION</span> LLC</div>
-            <nav>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-                <a href="#privacy">Privacy Policy</a>
-            </nav>
-        </div>
+  <!-- Top Header Banner Image -->
+  <div class="banner-container">
+    <img src="assets/SimpleTechSolutionHeader.png" alt="SIMPLE TECH SOLUTION LLC Banner" />
+  </div>
+
+  <div class="container">
+    
+    <!-- Profile / Brand Header -->
+    <header class="profile-header">
+      <img src="assets/SimpleTechSolutionDevIcon.png" alt="SIMPLE TECH SOLUTION LLC Icon" class="developer-icon" />
+      <div class="profile-title">
+        <h1>SIMPLE TECH SOLUTION LLC</h1>
+        <p>Custom Application Development & IT Consulting</p>
+      </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="badge">App Development & IT Consulting</div>
-            <h1>Building Mobile Applications & Enterprise Cloud Architecture</h1>
-            <p>SIMPLE TECH SOLUTION LLC delivers custom app development, API integrations, and technical consulting to help businesses modernize, scale, and thrive.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
+    <!-- About Section -->
+    <section class="card">
+      <h2>About Us</h2>
+      <p>
+        SIMPLE TECH SOLUTION LLC delivers modern mobile application development, full-stack software development, 
+        and enterprise IT integration solutions engineered for performance, scalability, and security.
+      </p>
     </section>
 
-    <main class="container" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Tailored technology solutions designed for modern enterprise performance.</p>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">📱</div>
-                <h3>Mobile & Web App Development</h3>
-                <p>End-to-end design, development, and deployment of native and cross-platform mobile applications for iOS and Android, built for security, scale, and performance.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">💡</div>
-                <h3>IT & Cloud Consulting</h3>
-                <p>Strategic IT consulting to optimize your technology stack, improve system performance, and establish reliable cloud infrastructure tailored to business objectives.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>Backend & API Integration</h3>
-                <p>Designing enterprise API architectures, robust backend databases, and microservices that streamline data flows and connect disparate enterprise platforms seamlessly.</p>
-            </div>
+    <!-- Services Section -->
+    <section class="card">
+      <h2>Core Capabilities</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <h3>Mobile Development</h3>
+          <p>Native Android and iOS applications built for high operational stability and seamless user experience.</p>
         </div>
-    </main>
-
-    <section class="container" id="contact" style="padding-top: 0;">
-        <div class="contact-box">
-            <h3>Let's Discuss Your Project</h3>
-            <p>Ready to build your app or modernize your IT infrastructure? Reach out to schedule a consultation.</p>
-            <p><strong>SIMPLE TECH SOLUTION LLC</strong><br>Kent, WA</p>
-            <a href="mailto:simpletechsolution.llc@gmail.com" class="btn">Email Us Directly</a>
+        <div class="service-item">
+          <h3>Cloud & Integration</h3>
+          <p>API-led connectivity, cloud backend architecture, and secure enterprise data integration solutions.</p>
         </div>
+        <div class="service-item">
+          <h3>Custom Software</h3>
+          <p>End-to-end web application development, database architecture, and tailored technical consulting.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="privacy-section" id="privacy">
-        <div class="privacy-content">
-            <h2>Privacy Policy</h2>
-            <p><em>Last updated: September 2026</em></p>
-            <p>SIMPLE TECH SOLUTION LLC ("we," "our," or "us") respects your privacy and is committed to protecting it through our compliance with this policy.</p>
-
-            <h3>1. Information Collection</h3>
-            <p>Our applications and website may collect minimal diagnostic data or user-provided communications strictly necessary to deliver core functionality and support services.</p>
-
-            <h3>2. Use of Information</h3>
-            <p>We use collected information solely to maintain, support, and improve our services and applications. We do not sell personal data to third parties.</p>
-
-            <h3>3. Third-Party Services</h3>
-            <p>Our apps may integrate standard analytics or backend services provided by Google Play Services or Apple Developer tools, governed by their respective privacy policies.</p>
-
-            <h3>4. Contact</h3>
-            <p>For privacy inquiries, please contact us at simpletechsolution.llc@gmail.com.</p>
-        </div>
+    <!-- Business Contact & Entity Information -->
+    <section class="card">
+      <h2>Company Details</h2>
+      <div class="contact-info">
+        <p><strong>Legal Entity:</strong> SIMPLE TECH SOLUTION LLC</p>
+        <p><strong>Contact Email:</strong> <a href="mailto:contact@simple-tech-solution.com" style="color: var(--accent); text-decoration: none;">contact@simple-tech-solution.com</a></p>
+        <p><strong>Official Website:</strong> https://simple-tech-solution.com</p>
+      </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        &copy; 2026 SIMPLE TECH SOLUTION LLC. All rights reserved.
+      &copy; 2026 SIMPLE TECH SOLUTION LLC. All rights reserved.
     </footer>
+
+  </div>
 
 </body>
 </html>
