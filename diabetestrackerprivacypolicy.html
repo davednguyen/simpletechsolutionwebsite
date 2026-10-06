@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Diabetes Tracker App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        medical: {
+                            blue: '#0284c7',
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .print-full-width { width: 100% !important; max-width: none !important; }
+            .shadow-xl, .shadow-md, .shadow-sm { box-shadow: none !important; }
+            .border { border-color: #cbd5e1 !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors duration-200 antialiased min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 no-print transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo & Title -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-blue-600 flex items-center justify-center text-white shadow-md shadow-teal-500/20">
+                    <i class="fa-solid font-bold fa-droplet text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">Diabetes Tracker</span>
+                    <span class="hidden sm:inline-block ml-2 px-2.5 py-0.5 text-xs font-medium bg-teal-100 text-teal-800 dark:bg-teal-900/60 dark:text-teal-300 rounded-full">
+                        Privacy First
+                    </span>
+                </div>
+            </div>
+
+            <!-- Actions Bar -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" onclick="toggleDarkMode()" class="p-2.5 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all" aria-label="Toggle Theme">
+                    <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+
+                <!-- Print / Save PDF Button -->
+                <button onclick="window.print()" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                    <i class="fa-solid fa-print"></i>
+                    <span class="hidden md:inline">Print / Save PDF</span>
+                </button>
+
+                <!-- Support Contact Quick Link -->
+                <a href="#contact" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-sm transition-all">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="hidden sm:inline">Contact Us</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-b from-teal-500/10 via-slate-50 to-slate-50 dark:from-teal-950/30 dark:via-slate-900 dark:to-slate-900 pt-10 pb-8 px-4 sm:px-6 lg:px-8 border-b border-slate-200/60 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900/50 text-teal-800 dark:text-teal-300 text-xs font-semibold mb-4">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Your Health Data Belongs To You</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
+                Privacy Policy & Data Security
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-6">
+                Learn how Diabetes Tracker keeps your daily blood sugar logs, meal records, and pregnancy health tracking private, safe, and stored directly on your device.
+            </p>
+            
+            <div class="flex items-center justify-center space-x-6 text-sm text-slate-500 dark:text-slate-400 mb-8">
+                <span><i class="fa-regular fa-calendar-check text-teal-600 dark:text-teal-400 mr-1.5"></i><strong>Effective Date:</strong> October 06, 2026</span>
+                <span><i class="fa-solid fa-mobile-screen text-teal-600 dark:text-teal-400 mr-1.5"></i><strong>App Version:</strong> 1.0+</span>
+            </div>
+
+            <!-- Policy Search Bar -->
+            <div class="max-w-xl mx-auto relative no-print">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" id="policySearch" oninput="filterPolicySections()" placeholder="Search terms (e.g., 'HIPAA', 'gestational', 'export', 'cloud', 'backup')..." class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-sm transition-all text-sm sm:text-base">
+                <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </div>
+            <p id="searchResultsCount" class="text-xs text-teal-600 dark:text-teal-400 font-medium mt-2 hidden"></p>
+        </div>
+    </section>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Sidebar Navigation / Table of Contents (Sticky on Desktop) -->
+            <aside class="lg:col-span-4 xl:col-span-3 lg:sticky lg:top-20 space-y-6 no-print">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <h2 class="text-xs font-bold text-slate-400 dark:text-slate-400 uppercase tracking-wider mb-4 flex items-center justify-between">
+                        <span>Table of Contents</span>
+                        <i class="fa-solid fa-list-ul"></i>
+                    </h2>
+                    <nav class="space-y-1" id="tocNav">
+                        <a href="#summary" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">1. Overview & How App Works</a>
+                        <a href="#data-collection" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">2. Information We Collect</a>
+                        <a href="#data-usage" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">3. How We Use Your Logs</a>
+                        <a href="#gestational-diabetes" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">4. Pregnancy & Gestational Diabetes</a>
+                        <a href="#medical-disclaimer" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">5. Medical Disclaimer & Non-HIPAA</a>
+                        <a href="#data-storage" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">6. Storage, Security & Backups</a>
+                        <a href="#third-parties" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">7. Third-Party Services</a>
+                        <a href="#user-rights" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">8. Your Rights & Data Deletion</a>
+                        <a href="#children" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">9. Children's Privacy (COPPA)</a>
+                        <a href="#faq" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">10. Frequently Asked Questions</a>
+                        <a href="#contact" class="toc-link block px-3 py-2 text-sm rounded-lg text-slate-700 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-700 dark:hover:text-teal-300 transition-colors">11. Contact & Policy Updates</a>
+                    </nav>
+                </div>
+
+                <!-- Quick Data Guarantee Card -->
+                <div class="bg-gradient-to-br from-teal-500 to-teal-700 text-white rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-lock text-xl"></i>
+                        <h3 class="font-bold text-base">Local-First Privacy</h3>
+                    </div>
+                    <p class="text-xs text-teal-100 leading-relaxed">
+                        Like a private baby kick counter or offline health diary, all your blood glucose values, insulin logs, and notes are saved directly on your phone unless you explicitly export or back them up.
+                    </p>
+                </div>
+            </aside>
+
+            <!-- Policy Sections Area -->
+            <div class="lg:col-span-8 xl:col-span-9 space-y-8 print-full-width" id="policyContent">
+                
+                <!-- Section 1: Summary / Overview -->
+                <section id="summary" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">1</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Overview & How Diabetes Tracker Works</h2>
+                    </div>
+                    <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base space-y-4">
+                        <p>
+                            <strong>Diabetes Tracker</strong> is built to offer a simple, frictionless, and secure way for users to record blood glucose readings, track post-meal sugar spikes, monitor fasting levels, and spot long-term glycemic trends.
+                        </p>
+                        <p>
+                            Much like a standalone, local <strong>baby kick counter app</strong> used during pregnancy, our app operates primarily as an <em>on-device digital notebook</em>. We prioritize local processing so that your sensitive daily glucose logs remain strictly under your personal custody and control.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700 text-center">
+                                <i class="fa-solid fa-database text-teal-600 dark:text-teal-400 text-2xl mb-2"></i>
+                                <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Stored Locally</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Logs stay on your hardware by default.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700 text-center">
+                                <i class="fa-solid fa-user-shield text-teal-600 dark:text-teal-400 text-2xl mb-2"></i>
+                                <h4 class="font-semibold text-slate-900 dark:text-white text-sm">No Account Needed</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">No mandatory sign-ups or personal profiles.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-700 text-center">
+                                <i class="fa-solid fa-file-export text-teal-600 dark:text-teal-400 text-2xl mb-2"></i>
+                                <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Easy PDF/CSV Export</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Easily share reports with your endocrinologist.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Information We Collect -->
+                <section id="data-collection" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">2</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Information We Collect</h2>
+                    </div>
+                    <div class="space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <p>We believe in strict data minimization. The app only collects information that you manually enter or enable:</p>
+                        
+                        <div class="space-y-3">
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40">
+                                <h3 class="font-bold text-slate-900 dark:text-white text-base flex items-center">
+                                    <i class="fa-solid fa-heart-pulse text-rose-500 mr-2"></i>
+                                    A. On-Device Health & Blood Sugar Logs
+                                </h3>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                                    <li>Blood glucose concentrations (mg/dL or mmol/L).</li>
+                                    <li>Meal tags (e.g., Fasting, Before Breakfast, 1-Hour Post Meal, 2-Hour Post Meal, Bedtime).</li>
+                                    <li>Carbohydrate counts, insulin dosage entries, or medication notes.</li>
+                                    <li>Timestamps and custom notes (e.g., physical exercise, symptoms, dietary intake).</li>
+                                </ul>
+                            </div>
+
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40">
+                                <h3 class="font-bold text-slate-900 dark:text-white text-base flex items-center">
+                                    <i class="fa-solid fa-gear text-teal-500 mr-2"></i>
+                                    B. Application Preferences & Technical Data
+                                </h3>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                                    <li>User settings (e.g., target glucose ranges, alarm/testing reminders, unit preferences).</li>
+                                    <li>Anonymous crash logs or basic app performance telemetry (only if permitted by your OS settings).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-200 text-xs sm:text-sm flex items-start space-x-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-600 dark:text-amber-400 text-lg mt-0.5"></i>
+                            <div>
+                                <strong>What We DO NOT Collect:</strong> We do not collect your name, email address, physical address, phone number, government identifiers, or precise GPS location data.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: How We Use Your Logs -->
+                <section id="data-usage" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">3</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">How We Use Your Information</h2>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-3">
+                        <p>Because your health data is stored locally on your mobile device, it is processed on-device solely to power app functionalities:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-teal-500 mt-1 mr-2.5"></i>
+                                <span><strong>Visual Charting & Analytics:</strong> Plotting your post-meal spikes and glycemic curves into daily, weekly, and monthly visual graphs.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-teal-500 mt-1 mr-2.5"></i>
+                                <span><strong>Testing Reminders:</strong> Scheduling local notifications (e.g., "Check blood sugar 2 hours after lunch") directly through your operating system.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-teal-500 mt-1 mr-2.5"></i>
+                                <span><strong>Report Generation:</strong> Formatting your readings into shareable PDF summaries or CSV spreadsheets for your medical appointments.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 4: Gestational Diabetes Special Note -->
+                <section id="gestational-diabetes" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all border-l-4 border-l-teal-500">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">4</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Pregnancy & Gestational Diabetes Privacy Note</h2>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+                        <div class="flex items-start space-x-4 bg-teal-50/70 dark:bg-teal-950/40 p-4 rounded-xl border border-teal-100 dark:border-teal-900">
+                            <i class="fa-solid fa-baby text-2xl text-teal-600 dark:text-teal-400 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-1">Maternal Health Privacy Safeguards</h3>
+                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                                    Many of our users are pregnant women managing <strong>gestational diabetes (GD)</strong> to protect both their health and their baby's development. Similar to a baby kick counter app, we treat maternal health data with maximum privacy sensitivity.
+                                </p>
+                            </div>
+                        </div>
+                        <p>
+                            We understand that tracking blood sugar alongside gestational weeks can feel personal and sensitive. <strong>Diabetes Tracker does not sell, trade, monetize, or transmit maternal health data or pregnancy status to third-party ad networks, insurance companies, or data brokers.</strong>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section 5: Medical Disclaimer & Non-HIPAA Notice -->
+                <section id="medical-disclaimer" class="policy-section bg-rose-50/50 dark:bg-slate-800/80 rounded-2xl p-6 sm:p-8 border border-rose-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 flex items-center justify-center font-bold">5</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Medical Disclaimer & Non-HIPAA Notice</h2>
+                    </div>
+                    <div class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+                        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-rose-300 dark:border-rose-900/60 shadow-sm">
+                            <h3 class="font-bold text-rose-800 dark:text-rose-400 uppercase text-xs tracking-wider mb-2 flex items-center">
+                                <i class="fa-solid fa-triangle-exclamation mr-2"></i> Important Medical Notice
+                            </h3>
+                            <p class="text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-medium">
+                                Diabetes Tracker is a logging software utility only. It does NOT provide medical advice, diagnosis, dosage calculation, or treatment recommendations.
+                            </p>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                            <li><strong>Not a Medical Device:</strong> The app is not certified as a regulated medical device or Continuous Glucose Monitor (CGM). Always rely on calibrated medical hardware and clinical guidance.</li>
+                            <li><strong>Non-HIPAA Covered Entity:</strong> The developer of Diabetes Tracker is not a covered entity or business associate under the Health Insurance Portability and Accountability Act (HIPAA). Because data stays on your phone, HIPAA standards do not govern this software. You are responsible for maintaining your device's passcode security.</li>
+                            <li><strong>Consult Your Healthcare Team:</strong> Never alter insulin dosages, dietary plans, or medication schedules without consulting your physician, endocrinologist, or OB-GYN.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 6: Data Storage, Security & Backups -->
+                <section id="data-storage" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">6</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Data Storage, Security & Cloud Backups</h2>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>
+                            Your log data resides in encrypted application storage on your iOS or Android device.
+                        </p>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">OS Cloud Backups (iCloud / Google Drive)</h3>
+                        <p>
+                            If you have automatic device backups enabled on your smartphone (e.g., Apple iCloud Backup or Google Cloud Backup), your app database may be included in your personal cloud storage. These backups are governed directly by Apple's or Google's respective privacy policies and account security settings.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section 7: Third-Party Services -->
+                <section id="third-parties" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">7</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Third-Party Services & Advertising</h2>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-3">
+                        <p>To support ongoing maintenance and non-intrusive improvements, the app may use limited third-party frameworks:</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs sm:text-sm text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white">
+                                        <th class="py-2.5 font-bold">Service Type</th>
+                                        <th class="py-2.5 font-bold">Provider</th>
+                                        <th class="py-2.5 font-bold">Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 dark:divide-slate-700/50">
+                                    <tr>
+                                        <td class="py-2.5">Crash Diagnostics</td>
+                                        <td class="py-2.5">Firebase / Apple Diagnostics</td>
+                                        <td class="py-2.5">Identifies system crashes (no health logs shared).</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2.5">Privacy-Safe Ads (Free Version)</td>
+                                        <td class="py-2.5">Google AdMob / Apple Search Ads</td>
+                                        <td class="py-2.5">Displays standard ad units without accessing health entries.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 8: Your Rights & Data Control -->
+                <section id="user-rights" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">8</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Your Rights & Data Control</h2>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>Because we do not store your health entries on external servers, you maintain total autonomy over your information:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-1"><i class="fa-solid fa-file-csv text-teal-600 dark:text-teal-400 mr-2"></i>Export Your Data</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">You can export your complete sugar logs as a CSV or PDF file at any time from Settings.</p>
+                            </div>
+                            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-1"><i class="fa-solid fa-trash-can text-rose-600 dark:text-rose-400 mr-2"></i>Instant Data Erasure</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Tapping "Clear All Data" in settings permanently purges all log entries from your device instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 9: Children's Privacy -->
+                <section id="children" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">9</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Children's Privacy (COPPA Compliance)</h2>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <p>
+                            Diabetes Tracker is designed for general audiences, pregnant mothers managing gestational diabetes, and adults. We do not knowingly collect personal identifiable information from children under the age of 13. If a parent or guardian discovers that a child has entered information into the app on a shared device, erasing the app or clearing local settings completely deletes that data.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section 10: Frequently Asked Questions -->
+                <section id="faq" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">10</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+                    </div>
+                    
+                    <div class="space-y-3" id="faqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                            <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between p-4 text-left font-semibold text-slate-900 dark:text-white bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors">
+                                <span class="text-sm sm:text-base">Is my health data or blood sugar reading sold to insurance companies?</span>
+                                <i id="faqIcon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200"></i>
+                            </button>
+                            <div id="faqBody-1" class="hidden p-4 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs sm:text-sm border-t border-slate-200 dark:border-slate-700">
+                                Absolute non-negotiable: <strong>No.</strong> Your health entries stay on your device. We do not transmit or sell your sugar readings, meal notes, or pregnancy status to insurers, advertisers, or third parties.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                            <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between p-4 text-left font-semibold text-slate-900 dark:text-white bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors">
+                                <span class="text-sm sm:text-base">Where is my data stored if I lose my phone?</span>
+                                <i id="faqIcon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200"></i>
+                            </button>
+                            <div id="faqBody-2" class="hidden p-4 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs sm:text-sm border-t border-slate-200 dark:border-slate-700">
+                                Because data is stored locally on device memory, if you lose your phone without an OS backup (iCloud or Google Backup), the local log entries cannot be remotely recovered by us. We encourage periodically exporting CSV/PDF reports to save elsewhere.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                            <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between p-4 text-left font-semibold text-slate-900 dark:text-white bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors">
+                                <span class="text-sm sm:text-base">Can my doctor directly access my app logs?</span>
+                                <i id="faqIcon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-200"></i>
+                            </button>
+                            <div id="faqBody-3" class="hidden p-4 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs sm:text-sm border-t border-slate-200 dark:border-slate-700">
+                                No direct digital link exists unless you manually export your formatted PDF report and email it or print it out for your medical consultation.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 11: Contact & Updates -->
+                <section id="contact" class="policy-section bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm transition-all">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center font-bold">11</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Contact Us & Policy Updates</h2>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-4">
+                        <p>
+                            We may periodically update this Privacy Policy to reflect app enhancements or legal requirements. Any modifications will be posted here with an updated "Effective Date".
+                        </p>
+                        <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <h3 class="font-bold text-slate-900 dark:text-white">Have Privacy Questions?</h3>
+                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                                If you have questions regarding this Privacy Policy or local data storage management, please reach out:
+                            </p>
+                            <div class="pt-2 flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                                <a href="mailto:contact@simple-tech-solution.com" class="inline-flex items-center text-teal-600 dark:text-teal-400 hover:underline font-medium">
+                                    <i class="fa-solid fa-envelope mr-2"></i> contact@simple-tech-solution.com
+                                </a>
+                                <span class="text-slate-400 hidden sm:inline">|</span>
+                                <span class="text-slate-500 dark:text-slate-400">
+                                    <i class="fa-solid fa-building mr-1"></i> SIMPLE TECH SOLUTION LLC
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 py-8 no-print transition-colors mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:items-center sm:justify-between">
+            <div class="flex items-center justify-center space-x-2 text-slate-900 dark:text-white font-bold text-base mb-4 sm:mb-0">
+                <i class="fa-solid fa-droplet text-teal-600 dark:text-teal-400"></i>
+                <span>Diabetes Tracker</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+                &copy; 2026 Diabetes Tracker App. Designed for simple, private blood glucose & maternal health logging.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Dark Mode Handler ---
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = 'fa-solid fa-moon text-lg';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                icon.className = 'fa-solid fa-sun text-lg';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Initialize theme preference on page load
+        (function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.getElementById('themeIcon');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                if(icon) icon.className = 'fa-solid fa-sun text-lg';
+            } else {
+                document.documentElement.classList.remove('dark');
+                if(icon) icon.className = 'fa-solid fa-moon text-lg';
+            }
+        })();
+
+        // --- Search/Filter Functionality within Policy ---
+        function filterPolicySections() {
+            const query = document.getElementById('policySearch').value.toLowerCase().trim();
+            const sections = document.querySelectorAll('.policy-section');
+            const clearBtn = document.getElementById('clearSearch');
+            const countDisplay = document.getElementById('searchResultsCount');
+            
+            let visibleCount = 0;
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+                countDisplay.classList.add('hidden');
+            }
+
+            sections.forEach(section => {
+                const text = section.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    section.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+
+            if (query.length > 0) {
+                countDisplay.classList.remove('hidden');
+                countDisplay.textContent = `Showing ${visibleCount} section(s) matching "${query}"`;
+            }
+        }
+
+        function clearSearchInput() {
+            const input = document.getElementById('policySearch');
+            input.value = '';
+            filterPolicySections();
+            input.focus();
+        }
+
+        // --- FAQ Accordion Toggle ---
+        function toggleFaq(index) {
+            const body = document.getElementById(`faqBody-${index}`);
+            const icon = document.getElementById(`faqIcon-${index}`);
+            
+            if (body.classList.contains('hidden')) {
+                body.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                body.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // --- Scroll Spy for Active TOC Highlighting ---
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.policy-section');
+            const navLinks = document.querySelectorAll('.toc-link');
+            
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-teal-100', 'dark:bg-teal-900/60', 'text-teal-800', 'dark:text-teal-200', 'font-semibold');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('bg-teal-100', 'dark:bg-teal-900/60', 'text-teal-800', 'dark:text-teal-200', 'font-semibold');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
