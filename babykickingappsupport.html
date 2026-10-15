@@ -1,335 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support & FAQ - Baby Kicks Counter</title>
-    <style>
-        :root {
-            --primary-color: #EC4899;
-            --primary-hover: #DB2777;
-            --secondary-color: #8B5CF6;
-            --bg-color: #FDF2F8;
-            --card-bg: #FFFFFF;
-            --text-main: #1F2937;
-            --text-muted: #6B7280;
-            --border-color: #F3E8FF;
-            --accent-pink: #FBCFE8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px 10px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Header / Hero */
-        header {
-            text-align: center;
-            padding: 40px 20px 30px;
-            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8FF 100%);
-            border-radius: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.08);
-            border: 1px solid var(--border-color);
-        }
-
-        .app-badge {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 18px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.3);
-        }
-
-        header h1 {
-            color: var(--text-main);
-            font-size: 1.8rem;
-            margin-bottom: 6px;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-        }
-
-        /* Sections & Cards */
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid var(--border-color);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.35rem;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Notice Banner */
-        .notice-box {
-            background-color: #EFF6FF;
-            border-left: 4px solid #3B82F6;
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 24px;
-            font-size: 0.93rem;
-            color: #1E40AF;
-        }
-
-        /* Interactive Counter Demo */
-        .demo-box {
-            background: #FAF5FF;
-            border: 2px dashed #DDD6FE;
-            border-radius: 14px;
-            padding: 20px;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .demo-counter {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin: 10px 0;
-        }
-
-        .btn {
-            background-color: var(--primary-color);
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 22px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 6px rgba(236, 72, 153, 0.3);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background-color: #E5E7EB;
-            color: var(--text-main);
-            box-shadow: none;
-            margin-left: 8px;
-        }
-
-        .btn-secondary:hover {
-            background-color: #D1D5DB;
-        }
-
-        /* FAQ Accordion */
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 14px 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-main);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .faq-item.active .faq-question::after {
-            content: '−';
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-muted);
-            font-size: 0.93rem;
-            padding-top: 0;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding-top: 10px;
-        }
-
-        /* Medical Disclaimer */
-        .disclaimer-box {
-            background-color: #FFFBEB;
-            border: 1px solid #FCD34D;
-            border-radius: 12px;
-            padding: 18px;
-            font-size: 0.88rem;
-            color: #92400E;
-            margin-bottom: 24px;
-        }
-
-        .disclaimer-box strong {
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            padding: 20px 0;
-        }
-
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Baby Kick Counter</title>
+  <style>
+    :root {
+      --primary: #8a4baf;
+      --text: #2d3748;
+      --bg: #fdfbfd;
+      --card-bg: #ffffff;
+      --border: #edf2f7;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 750px;
+      margin: 40px auto;
+      padding: 32px 24px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+    h1 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.95rem;
+      color: #718096;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-top: 24px;
+    }
+    p, li {
+      font-size: 0.98rem;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .disclaimer {
+      background-color: #faf5ff;
+      border-left: 4px solid var(--primary);
+      padding: 12px 16px;
+      margin-top: 24px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+    }
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #a0aec0;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Hero Header -->
-    <header>
-        <div class="app-badge">👶</div>
-        <h1>Baby Kicks Support Center</h1>
-        <p>Help, FAQs, and Contact for Baby Kicks – Kick Counter & Tracker</p>
-    </header>
-
-    <!-- Notice Banner regarding PDF Feature -->
-    <div class="notice-box">
-        <strong>📌 Note on PDF Export:</strong> We are currently working on adding a downloadable PDF Movement Log feature in an upcoming update! All kick sessions logged in the current app version will automatically export once the feature goes live.
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <div class="subtitle">
+      <strong>App:</strong> Baby Kick Counter | <strong>Publisher:</strong> SIMPLE TECH SOLUTION LLC<br>
+      <strong>Effective Date:</strong> September 21, 2026 | <strong>Last Updated:</strong> October 15, 2026
     </div>
 
-    <!-- Quick Interactive Demo -->
-    <div class="card">
-        <h2>⏱️ Try the Kick Counter</h2>
-        <p style="font-size: 0.92rem; color: var(--text-muted);">Tap the button below to simulate recording a kick session in the app:</p>
-        <div class="demo-box">
-            <div style="font-size: 0.88rem; color: var(--text-muted);">Current Session Count</div>
-            <div class="demo-counter" id="demo-count">0</div>
-            <button class="btn" onclick="addKick()">+ Record Kick</button>
-            <button class="btn btn-secondary" onclick="resetDemo()">Reset</button>
-        </div>
+    <p>This Privacy Policy describes how <strong>SIMPLE TECH SOLUTION LLC</strong> ("we", "us", or "our") handles information for the <strong>Baby Kick Counter</strong> mobile application.</p>
+
+    <h2>1. Information Collection & Storage</h2>
+    <p>Baby Kick Counter is built around local, on-device storage:</p>
+    <ul>
+      <li><strong>No Account Required:</strong> You do not need to register, log in, or provide any personal details (such as name, email, or phone number) to use the app.</li>
+      <li><strong>Local Data Storage:</strong> All session logs, kick timestamps, and notes created within the app are saved on your local device storage (and, if you use the Home Screen widget, in a storage area shared only between the app and widget on your own device).</li>
+      <li><strong>No Sale of Data:</strong> We do not sell your personal or activity data, and we do not use it for any purpose other than operating the app's features described in this policy.</li>
+    </ul>
+
+    <h2>2. Advertising & Third-Party Services</h2>
+    <p>Unless you've removed ads (see Section 3), Baby Kick Counter shows banner ads served by <strong>Google AdMob</strong>. To do this, the app uses Google's User Messaging Platform (UMP) to ask for your consent before showing personalized ads, as required under applicable law (e.g. GDPR, UK ATT). Google and its advertising partners may process limited technical and advertising identifiers to serve and measure ads; we do not control this processing directly, and it is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can decline personalized ads from the consent prompt, and you can reset or limit ad tracking at any time in your device's Settings.</p>
+    <p>We do not otherwise integrate analytics SDKs, and we do not track your precise location.</p>
+
+    <h2>3. In-App Purchases & Subscriptions</h2>
+    <p>Baby Kick Counter offers optional paid upgrades, purchased and managed entirely through Apple's App Store:</p>
+    <ul>
+      <li><strong>Remove Ads (one-time purchase):</strong> permanently removes ads from the app.</li>
+      <li><strong>Pro (auto-renewing monthly subscription):</strong> removes ads and unlocks the ability to export and share your kick data as PDF reports, CSV spreadsheets, and text summaries.</li>
+    </ul>
+    <p>All payment processing is handled by Apple — we never see or store your payment card details. Subscriptions renew automatically until canceled; you can view, manage, or cancel a subscription at any time in <strong>Settings &gt; [your name] &gt; Subscriptions</strong> on your device. Purchase status (which product you own) is checked directly with Apple's servers each time the app launches, using Apple's StoreKit framework, so that your purchase works across your devices.</p>
+
+    <h2>4. Face ID / Touch ID App Lock</h2>
+    <p>Baby Kick Counter includes an optional app lock that you can turn on from the About screen. When enabled, the app asks for Face ID, Touch ID, or your device passcode before it can be opened. This authentication is handled entirely by iOS: the app never receives, sees, or stores your fingerprint, face data, or any other biometric information — it only receives a yes/no result from the operating system. This feature works fully offline and never transmits anything to us or to any third party.</p>
+
+    <h2>5. Exporting & Sharing Your Data</h2>
+    <p>From the Insights tab, you can generate a PDF report, a CSV spreadsheet, and/or a text summary of your own kick data — for example, to share with a partner or a healthcare provider. These files are created entirely on your device. When you choose to share them (for example, through Mail, Messages, AirDrop, or a file storage app), that data leaves the app through the destination you pick, and is subject to that destination app or service's own privacy practices. We do not receive a copy of anything you export or share.</p>
+
+    <h2>6. Children's Privacy</h2>
+    <p>Baby Kick Counter is not directed at children and does not knowingly collect personal information from anyone, including children under the age of 13. Ads shown in the app are not targeted using children's data.</p>
+
+    <h2>7. Medical Disclaimer</h2>
+    <div class="disclaimer">
+      <strong>Important Medical Note:</strong> Baby Kick Counter is designed strictly as a personal logging tool for general tracking purposes. It is not a medical device and is not a substitute for professional healthcare advice, diagnosis, or monitoring. Always consult your obstetrician, midwife, or medical provider if you have any questions or concerns regarding fetal movement.
     </div>
 
-    <!-- FAQ Section -->
-    <div class="card">
-        <h2>❓ Frequently Asked Questions</h2>
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy as the app's features change. We'll update the "Last Updated" date above when we do, and significant changes will be reflected here before or alongside the app update that introduces them.</p>
 
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">When should I start counting baby kicks?</div>
-            <div class="faq-answer">
-                Most healthcare providers recommend starting daily kick counts around week 28 of pregnancy (or week 26 for high-risk pregnancies). Always consult your OB-GYN or midwife for personalized advice.
-            </div>
-        </div>
+    <h2>9. Contact Us</h2>
+    <p>If you have any questions or feedback regarding this Privacy Policy, please contact us at:</p>
+    <p><strong>SIMPLE TECH SOLUTION LLC</strong><br>
+    Email: contact@simple-tech-solution.com</p>
 
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">How long should a session take?</div>
-            <div class="faq-answer">
-                A standard session tracks how long it takes to feel 10 distinct movements (kicks, rolls, or flutters). Usually, 10 movements occur within 30 to 60 minutes, though it can take up to 2 hours during quieter periods.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">How do I export my kick logs?</div>
-            <div class="faq-answer">
-                Your history is saved locally on your device in the "History" tab. The upcoming PDF export feature will allow you to generate a shareable summary directly for your doctor visits.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">Is my health data private?</div>
-            <div class="faq-answer">
-                Yes! All kick sessions and timestamps are stored exclusively on your device. We do not transmit or sell your pregnancy tracking data to external servers.
-            </div>
-        </div>
+    <div class="footer">
+      &copy; 2026 SIMPLE TECH SOLUTION LLC. All rights reserved.
     </div>
-
-    <!-- Contact Support Direct Email Link -->
-    <div class="card">
-        <h2>✉️ Contact Support</h2>
-        <p style="margin-bottom: 16px; color: var(--text-muted); font-size: 0.95rem;">
-            Have questions, feedback, or need assistance with the app? Click the button below to email our team directly:
-        </p>
-        <a href="mailto:contact@simple-tech-solution.com?subject=Baby%20Kicks%20App%20Support" class="btn">
-            Email contact@simple-tech-solution.com
-        </a>
-    </div>
-
-    <!-- Medical Disclaimer -->
-    <div class="disclaimer-box">
-        <strong>⚠️ Medical Disclaimer</strong>
-        Baby Kicks is designed as a personal movement tracking tool and is not a medical device. It does not replace professional care. If you notice a sudden decrease in fetal movement or have concerns, contact your doctor or labor & delivery clinic immediately.
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2026 Baby Kicks App. All rights reserved. | <a href="#">Privacy Policy</a>
-    </footer>
-</div>
-
-<script>
-    // Demo Kick Counter Logic
-    let count = 0;
-    function addKick() {
-        count++;
-        document.getElementById('demo-count').innerText = count;
-    }
-    function resetDemo() {
-        count = 0;
-        document.getElementById('demo-count').innerText = count;
-    }
-
-    // Accordion Toggle
-    function toggleFaq(element) {
-        const item = element.parentElement;
-        item.classList.toggle('active');
-    }
-</script>
+  </div>
 
 </body>
 </html>
