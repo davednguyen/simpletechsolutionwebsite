@@ -1,231 +1,427 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIMPLE TECH SOLUTION LLC | Application Development & IT Consulting</title>
-  <meta name="description" content="Official website of SIMPLE TECH SOLUTION LLC. Custom software development, mobile applications, and enterprise IT integration solutions." />
-  <style>
-    :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #38bdf8;
-      --border: #334155;
-    }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    /* Header Banner Container */
-    .banner-container {
-      width: 100%;
-      max-height: 350px;
-      overflow: hidden;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .banner-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-
-    /* Profile / Branding Header */
-    .profile-header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: -3rem; /* Overlap slightly with banner */
-      margin-bottom: 2.5rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .developer-icon {
-      width: 110px;
-      height: 110px;
-      border-radius: 20px;
-      border: 4px solid var(--bg-color);
-      background-color: var(--card-bg);
-      object-fit: cover;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
-
-    .profile-title h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .profile-title p {
-      color: var(--accent);
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    /* Cards / Sections */
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .card h2 {
-      font-size: 1.3rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .service-item {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 1rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .service-item h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
-
-    .service-item p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .contact-info p {
-      margin-bottom: 0.5rem;
-      color: var(--text-muted);
-    }
-
-    .contact-info strong {
-      color: var(--text-main);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border);
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      .profile-header {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: -2rem;
-        gap: 1rem;
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>SIMPLE TECH SOLUTION LLC | Application Development &amp; IT Consulting</title><meta name="description" content="Official website of SIMPLE TECH SOLUTION LLC. Custom software development, mobile applications, and enterprise IT integration solutions."/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-container":"#00695c","surface-elevated":"#1C2B47","secondary-fixed":"#b6ebff","on-primary-fixed":"#00201b","on-tertiary-fixed":"#001a42","inverse-surface":"#dfe2ef","glow-blue":"rgba(59, 130, 246, 0.14)","on-tertiary-fixed-variant":"#004395","inverse-primary":"#006b5d","secondary":"#a5e7ff","text-primary":"#F8FAFC","on-secondary":"#003543","tertiary":"#eff2ff","on-secondary-fixed":"#001f28","on-error-container":"#ffdad6","on-primary-fixed-variant":"#005046","primary":"#bffff0","primary-fixed":"#30fde1","on-background":"#dfe2ef","on-tertiary-container":"#0058bf","surface-container":"#1c1f29","text-muted":"#64748B","border-subtle":"rgba(255, 255, 255, 0.08)","surface-base":"#0E1626","on-secondary-container":"#00566a","on-surface":"#dfe2ef","surface-container-lowest":"#0a0e17","surface-canvas":"#090D16","secondary-fixed-dim":"#47d6ff","error":"#ffb4ab","text-secondary":"#94A3B8","on-tertiary":"#002e6a","surface-tint":"#00dfc5","tertiary-container":"#c5d6ff","surface-container-highest":"#31353f","secondary-container":"#00d2ff","background":"#0f131c","surface-variant":"#31353f","surface-container-high":"#262a34","on-surface-variant":"#b9cac5","on-secondary-fixed-variant":"#004e60","on-error":"#690005","glow-cyan":"rgba(0, 240, 212, 0.16)","surface-bright":"#353943","outline-variant":"#3a4a46","primary-fixed-dim":"#00dfc5","tertiary-fixed-dim":"#adc6ff","inverse-on-surface":"#2c303a","tertiary-fixed":"#d8e2ff","border-glass":"rgba(0, 240, 212, 0.22)","on-primary":"#003730","primary-container":"#00f0d4","surface-container-low":"#181b25","surface-dim":"#0f131c","error-container":"#93000a","outline":"#849490","surface":"#0f131c"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"1rem","margin-mobile":"1.25rem","gutter":"1.5rem","space-lg":"1.5rem","space-xl":"2.5rem","space-sm":"0.5rem","margin":"3rem","space-xs":"0.25rem","space-md":"1rem"},"fontFamily":{"headline-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["JetBrains Mono"],"body-lg":["Inter"],"label-md":["JetBrains Mono"],"body-sm":["Inter"],"body-md":["Inter"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-canvas/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><img alt="Simple Tech Solution Logo" class="h-8 w-auto object-contain" src="assets/SimpleTechSolutionDevIcon.png"/><a class="font-headline-sm text-headline-sm text-text-primary tracking-tight" data-path="about" href="#about">SIMPLE TECH SOLUTION</a></div><nav class="hidden lg:flex items-center gap-space-md" data-active-classes="bg-surface-container text-primary font-bold rounded-lg"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-surface-container text-primary font-bold rounded-lg" data-path="about" href="#about">About</a><a class="px-space-md py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 rounded-lg transition-colors" data-path="core-capabilities" href="#core-capabilities">Core Capabilities</a><a class="px-space-md py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 rounded-lg transition-colors" data-path="solutions" href="#core-capabilities">Solutions</a><a class="px-space-md py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container/50 rounded-lg transition-colors" data-path="company-details" href="#company-details">Company Details</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm bg-primary-container hover:bg-secondary-container text-on-primary font-headline-sm text-label-md rounded-lg shadow-[0_0_20px_rgba(0,240,212,0.25)] transition-all active:scale-[0.98]" data-path="contact-us" href="mailto:contact@simple-tech-solution.com">Get in Touch</a></div></div></header><main class="w-full pt-20 bg-surface-canvas min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Atmospheric Gradient Canvas -->
+<div class="relative w-full overflow-hidden">
+<!-- Ambient Radial Glows -->
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-b from-primary/15 via-secondary-container/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-96 right-10 w-[450px] h-[450px] bg-secondary-container/10 blur-[120px] pointer-events-none -z-10"></div>
+<div class="absolute top-[600px] left-10 w-[400px] h-[400px] bg-primary-container/10 blur-[140px] pointer-events-none -z-10"></div>
+<!-- HERO SECTION -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-12 pb-24 md:pt-20 md:pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Hero Left / Content -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-space-lg">
+<!-- Architecture Pill Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container shadow-[0_0_24px_rgba(0,240,212,0.18)]">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase text-primary tracking-widest">Enterprise Application Development &amp; IT Consulting</span>
+</div>
+<!-- Hero Main Statement -->
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-secondary-container uppercase tracking-wider">Software • Web • Cloud Development</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary tracking-tight leading-tight">
+              SIMPLE TECH SOLUTION <span class="text-primary-container">LLC</span>
+</h1>
+<p class="font-headline-md text-headline-md text-secondary font-semibold">
+              Custom Application Development &amp; IT Consulting
+            </p>
+</div>
+<!-- Verbatim Mission / Value Prop -->
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl leading-relaxed">
+            SIMPLE TECH SOLUTION LLC delivers modern mobile application development, full-stack software development, and enterprise IT integration solutions engineered for performance, scalability, and security.
+          </p>
+<!-- Action Matrix -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center px-space-xl py-space-sm bg-primary-container hover:bg-secondary-container text-on-primary font-headline-sm text-label-md uppercase tracking-wider rounded-lg shadow-[0_0_30px_rgba(0,240,212,0.35)] transition-all transform active:scale-95 duration-200" href="#core-capabilities">
+<span>Explore Capabilities</span>
+<span class="material-symbols-outlined ml-2 text-[18px]">arrow_downward</span>
+</a>
+<a class="inline-flex items-center justify-center px-space-lg py-space-sm bg-surface-container hover:bg-surface-elevated text-text-primary hover:text-primary transition-all rounded-lg shadow-sm" href="mailto:contact@simple-tech-solution.com">
+<span class="material-symbols-outlined mr-2 text-primary-container text-[18px]">terminal</span>
+<span class="font-headline-sm text-label-md">Contact Engineering</span>
+</a>
+</div>
+<!-- Key Trust Signals -->
+<div class="grid grid-cols-3 gap-space-md pt-space-md w-full max-w-xl">
+<div class="flex flex-col p-space-sm bg-surface-container/70 rounded-lg">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Platforms</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Mobile</span>
+<span class="font-label-sm text-label-sm text-primary">iOS • Android</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container/70 rounded-lg">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Delivery</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Full-Stack</span>
+<span class="font-label-sm text-label-sm text-secondary">Web • Backend</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container/70 rounded-lg">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Integration</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Cloud</span>
+<span class="font-label-sm text-label-sm text-primary-container">APIs • Data</span>
+</div>
+</div>
+</div>
+<!-- Hero Right / Brand Banner -->
+<div class="lg:col-span-5 relative mt-6 lg:mt-0">
+<div class="relative bg-surface-container rounded-xl p-space-sm shadow-2xl overflow-hidden">
+<img alt="SIMPLE TECH SOLUTION LLC banner" class="w-full h-auto rounded-lg object-cover" src="assets/SimpleTechSolutionHeader.png"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ABOUT US / PHILOSOPHY SPOTLIGHT -->
+<section class="w-full bg-surface-container-low py-space-xl" id="about">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="bg-surface-container rounded-xl p-space-lg md:p-space-xl shadow-xl relative overflow-hidden">
+<!-- Glow Backdrop -->
+<div class="absolute -right-24 -bottom-24 w-80 h-80 bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-5 space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded bg-surface-elevated text-primary font-label-sm text-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>About Us</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+              Engineering with Purpose, Precision &amp; Vision
+            </h2>
+<div class="w-12 h-1 bg-primary-container rounded"></div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              SIMPLE TECH SOLUTION LLC delivers modern mobile application development, full-stack software development, and enterprise IT integration solutions engineered for performance, scalability, and security.
+            </p>
+<div class="pt-space-xs flex items-center gap-space-md text-text-muted font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<span>Security First</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">speed</span>
+<span>Optimized Scale</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Strategic Pillar 1 -->
+<div class="bg-surface-canvas p-space-md rounded-xl space-y-space-sm shadow-md flex flex-col justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-1">Performance</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  Architected with clean concurrency models, micro-benchmarked routines, and non-blocking I/O.
+                </p>
+</div>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Fast</span>
+</div>
+<!-- Strategic Pillar 2 -->
+<div class="bg-surface-canvas p-space-md rounded-xl space-y-space-sm shadow-md flex flex-col justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">expand</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-1">Scalability</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  Seamless multi-region deployment, decoupled microservices, and dynamic autoscaling thresholds.
+                </p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Scalable</span>
+</div>
+<!-- Strategic Pillar 3 -->
+<div class="bg-surface-canvas p-space-md rounded-xl space-y-space-sm shadow-md flex flex-col justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-1">Security</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  Zero-trust authorization paradigms, hardened API endpoints, and comprehensive vulnerability defense.
+                </p>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container tracking-widest uppercase">Secure</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CORE CAPABILITIES SECTION -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-xl md:py-32" id="core-capabilities">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded bg-surface-container text-primary-container font-label-sm text-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">domain_verification</span>
+<span>Technical Expertise</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-text-primary">
+          Core Capabilities
+        </h2>
+<p class="font-body-lg text-body-lg text-text-secondary">
+          Full lifecycle engineering frameworks crafted for mission-critical enterprise environments.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-primary">
+<span>3 SPECIALIZED DOMAINS</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<!-- 3-Column Capability Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Capability 1: Mobile Development -->
+<div class="group bg-surface-container hover:bg-surface-elevated rounded-xl p-space-lg shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">smartphone</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-text-muted">DOM-01</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-space-xs group-hover:text-primary transition-colors">
+              Mobile Development
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              Native Android and iOS applications built for high operational stability and seamless user experience.
+            </p>
+</div>
+<!-- Feature Tag Matrix -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-primary">Kotlin / Swift</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-text-primary">Offline-First Architecture</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-text-secondary">Responsive UI</span>
+</div>
+</div>
+<div class="pt-space-lg mt-space-lg bg-gradient-to-t from-surface-canvas/40 to-transparent p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">Deployment Target</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">iOS • Android Native</span>
+</div>
+</div>
+<!-- Capability 2: Cloud & Integration -->
+<div class="group bg-surface-container hover:bg-surface-elevated rounded-xl p-space-lg shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">cloud_sync</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-text-muted">DOM-02</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-space-xs group-hover:text-secondary transition-colors">
+              Cloud &amp; Integration
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              API-led connectivity, cloud backend architecture, and secure enterprise data integration solutions.
+            </p>
+</div>
+<!-- Feature Tag Matrix -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-secondary">REST &amp; GraphQL APIs</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-text-primary">Microservices</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-text-secondary">Enterprise Data Pipelines</span>
+</div>
+</div>
+<div class="pt-space-lg mt-space-lg bg-gradient-to-t from-surface-canvas/40 to-transparent p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">Infrastructure</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Multi-Cloud • Serverless</span>
+</div>
+</div>
+<!-- Capability 3: Custom Software -->
+<div class="group bg-surface-container hover:bg-surface-elevated rounded-xl p-space-lg shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">code_blocks</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-text-muted">DOM-03</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-space-xs group-hover:text-primary transition-colors">
+              Custom Software
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              End-to-end web application development, database architecture, and tailored technical consulting.
+            </p>
+</div>
+<!-- Feature Tag Matrix -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-primary">Full-Stack Systems</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-text-primary">Relational &amp; NoSQL</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-[12px] font-label-sm text-text-secondary">Security Compliance</span>
+</div>
+</div>
+<div class="pt-space-lg mt-space-lg bg-gradient-to-t from-surface-canvas/40 to-transparent p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">Architecture Model</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Modular • Scalable</span>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPANY DETAILS & REGULATORY TRUST PANEL -->
+<section class="w-full bg-surface-container-low py-space-xl" id="company-details">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Left Side: Identity & Official Verbatim Records -->
+<div class="lg:col-span-7 bg-surface-container rounded-xl p-space-lg md:p-space-xl shadow-xl flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded bg-surface-canvas text-primary font-label-sm text-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">corporate_fare</span>
+<span>Official Registry</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Registered LLC</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">
+                Company Details
+              </h2>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                Verified registration credentials and direct enterprise communication channels.
+              </p>
+</div>
+<!-- Structured Metas -->
+<div class="space-y-space-sm pt-space-xs">
+<!-- Legal Entity -->
+<div class="p-space-md bg-surface-canvas rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">badge</span>
+<span class="font-label-md text-label-md text-text-muted">Legal Entity</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-text-primary font-semibold">SIMPLE TECH SOLUTION LLC</span>
+</div>
+<!-- Contact Email with Copy Action -->
+<div class="p-space-md bg-surface-canvas rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">mail</span>
+<span class="font-label-md text-label-md text-text-muted">Contact Email</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="font-label-md text-label-md text-primary-container hover:underline" href="mailto:contact@simple-tech-solution.com">
+                    contact@simple-tech-solution.com
+                  </a>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-elevated text-text-muted hover:text-text-primary transition-colors" id="copyEmailBtn" title="Copy to clipboard">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<span class="hidden text-[12px] font-label-sm text-primary font-medium" id="copyConfirm">Copied!</span>
+</div>
+</div>
+<!-- Official Website -->
+<div class="p-space-md bg-surface-canvas rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[22px]">language</span>
+<span class="font-label-md text-label-md text-text-muted">Official Website</span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:text-primary-container flex items-center gap-1 transition-colors" href="https://simple-tech-solution.com" rel="noopener noreferrer" target="_blank">
+<span>https://simple-tech-solution.com</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Trust & Validation Credentials -->
+<div class="lg:col-span-5 bg-surface-container rounded-xl p-space-lg md:p-space-xl shadow-xl flex flex-col justify-between">
+<div class="space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded bg-surface-canvas text-secondary font-label-sm text-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">security</span>
+<span>How We Work</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary">
+              Our Commitments
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              SIMPLE TECH SOLUTION LLC builds software with clear communication, careful engineering, and respect for your data.
+            </p>
+<!-- Verification Pills / Badges -->
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-canvas">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<div>
+<div class="font-headline-sm text-body-md text-text-primary font-semibold">Registered LLC</div>
+<div class="font-body-sm text-body-sm text-text-muted">SIMPLE TECH SOLUTION is a registered limited liability company.</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-canvas">
+<span class="material-symbols-outlined text-secondary text-[24px]">handshake</span>
+<div>
+<div class="font-headline-sm text-body-md text-text-primary font-semibold">Direct Communication</div>
+<div class="font-body-sm text-body-sm text-text-muted">Work directly with the engineers building your product.</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-canvas">
+<span class="material-symbols-outlined text-primary-container text-[24px]">lock_clock</span>
+<div>
+<div class="font-headline-sm text-body-md text-text-primary font-semibold">Security-Minded Development</div>
+<div class="font-body-sm text-body-sm text-text-muted">Secure coding practices applied from design through deployment.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md">
+<a class="w-full inline-flex items-center justify-center gap-2 py-3 bg-surface-elevated hover:bg-surface-bright text-text-primary hover:text-primary transition-all rounded-lg font-label-md text-label-md" href="mailto:contact@simple-tech-solution.com">
+<span class="material-symbols-outlined text-[18px]">contact_support</span>
+<span>Email Us</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HIGH-CONVERSION CTA / CONSULTATION BANNER -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-xl md:py-28 w-full">
+<div class="relative bg-surface-container rounded-2xl p-space-lg md:p-space-xl shadow-2xl overflow-hidden text-center flex flex-col items-center">
+<!-- Glow Burst Accent -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-4 py-1.5 rounded-full bg-surface-canvas text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Initiate Consultation</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-text-primary tracking-tight">
+          Ready to engineer your next digital solution?
+        </h2>
+<p class="font-body-lg text-body-lg text-text-secondary">
+          Connect directly with the engineering leads at <strong class="text-text-primary">SIMPLE TECH SOLUTION LLC</strong> to architect, develop, and scale your technology ecosystem.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md pt-space-sm">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-primary-container hover:bg-secondary-container text-on-primary font-headline-sm text-label-md uppercase tracking-wider rounded-lg shadow-[0_0_30px_rgba(0,240,212,0.35)] transition-all transform active:scale-95 duration-200" href="mailto:contact@simple-tech-solution.com">
+<span class="material-symbols-outlined mr-2 text-[20px]">email</span>
+<span>contact@simple-tech-solution.com</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 bg-surface-canvas hover:bg-surface-elevated text-text-primary hover:text-primary transition-all rounded-lg font-headline-sm text-label-md" href="#company-details">
+<span>Review Legal Details</span>
+</a>
+</div>
+<!-- Micro Meta Footer -->
+<p class="font-label-sm text-label-sm text-text-muted pt-2">
+          Send us an email to start the conversation.
+        </p>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript for micro-interactions -->
+<script>
+    (function() {
+      const copyBtn = document.getElementById('copyEmailBtn');
+      const copyConfirm = document.getElementById('copyConfirm');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          navigator.clipboard.writeText('contact@simple-tech-solution.com').then(() => {
+            if (copyConfirm) {
+              copyConfirm.classList.remove('hidden');
+              setTimeout(() => {
+                copyConfirm.classList.add('hidden');
+              }, 2500);
+            }
+          });
+        });
       }
-      .developer-icon {
-        width: 80px;
-        height: 80px;
-      }
-      .profile-title h1 {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Top Header Banner Image -->
-  <div class="banner-container">
-    <img src="assets/SimpleTechSolutionHeader.png" alt="SIMPLE TECH SOLUTION LLC Banner" />
-  </div>
-
-  <div class="container">
-    
-    <!-- Profile / Brand Header -->
-    <header class="profile-header">
-      <img src="assets/SimpleTechSolutionDevIcon.png" alt="SIMPLE TECH SOLUTION LLC Icon" class="developer-icon" />
-      <div class="profile-title">
-        <h1>SIMPLE TECH SOLUTION LLC</h1>
-        <p>Custom Application Development & IT Consulting</p>
-      </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="card">
-      <h2>About Us</h2>
-      <p>
-        SIMPLE TECH SOLUTION LLC delivers modern mobile application development, full-stack software development, 
-        and enterprise IT integration solutions engineered for performance, scalability, and security.
-      </p>
-    </section>
-
-    <!-- Services Section -->
-    <section class="card">
-      <h2>Core Capabilities</h2>
-      <div class="services-grid">
-        <div class="service-item">
-          <h3>Mobile Development</h3>
-          <p>Native Android and iOS applications built for high operational stability and seamless user experience.</p>
-        </div>
-        <div class="service-item">
-          <h3>Cloud & Integration</h3>
-          <p>API-led connectivity, cloud backend architecture, and secure enterprise data integration solutions.</p>
-        </div>
-        <div class="service-item">
-          <h3>Custom Software</h3>
-          <p>End-to-end web application development, database architecture, and tailored technical consulting.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Business Contact & Entity Information -->
-    <section class="card">
-      <h2>Company Details</h2>
-      <div class="contact-info">
-        <p><strong>Legal Entity:</strong> SIMPLE TECH SOLUTION LLC</p>
-        <p><strong>Contact Email:</strong> <a href="mailto:contact@simple-tech-solution.com" style="color: var(--accent); text-decoration: none;">contact@simple-tech-solution.com</a></p>
-        <p><strong>Official Website:</strong> https://simple-tech-solution.com</p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      &copy; 2026 SIMPLE TECH SOLUTION LLC. All rights reserved.
-    </footer>
-
-  </div>
-
-</body>
-</html>
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant"><div class="max-w-7xl mx-auto px-margin py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col sm:flex-row items-center gap-space-md text-center sm:text-left"><span class="font-label-sm text-label-sm text-text-muted">© 2026 SIMPLE TECH SOLUTION LLC. All rights reserved.</span></div><div class="flex items-center gap-space-lg"><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="mailto:contact@simple-tech-solution.com">contact@simple-tech-solution.com</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" data-path="about" href="#about">Official Portal</a></div></div></footer></body></html>
